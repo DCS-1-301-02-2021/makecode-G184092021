@@ -50,7 +50,7 @@ game.on_update_interval(500, on_a_update)
 def on_hit(sprite,othersprite):
     othersprite.destroy(effects.fire,100)
     info.change_score_by(1)
-    sprites.on_overlap(SpriteKind.projectile,SpriteKind.enemy,
+sprites.on_overlap(SpriteKind.projectile,SpriteKind.enemy,
     on_hit)
 def on_crash(sprite,othersprite):
     othersprite.destroy()

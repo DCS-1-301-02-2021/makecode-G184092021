@@ -46,6 +46,10 @@ game.onUpdateInterval(500, function on_a_update() {
     bogy.left = scene.screenWidth()
     bogy.setFlag(SpriteFlag.AutoDestroy, true)
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_hit(sprite: Sprite, othersprite: Sprite) {
+    othersprite.destroy(effects.fire, 100)
+    info.changeScoreBy(1)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_crash(sprite: Sprite, othersprite: Sprite) {
     othersprite.destroy()
     info.changeLifeBy(-1)
