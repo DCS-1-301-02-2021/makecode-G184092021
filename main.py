@@ -38,7 +38,7 @@ def on_a_pressed():
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
     """),spacePlane,200,0)
-    controller.A.on_event(
+controller.A.on_event(
     ControllerButtonEvent.PRESSED, on_a_pressed)
 def on_a_update():
     bogy=sprites.create(assets.image("""bogy"""),SpriteKind.enemy)

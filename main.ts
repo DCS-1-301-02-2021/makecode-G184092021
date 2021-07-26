@@ -19,6 +19,26 @@ let spacePlane = sprites.create(img`
 `, SpriteKind.Player)
 spacePlane.setStayInScreen(true)
 controller.moveSprite(spacePlane, 200, 200)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function on_a_pressed() {
+    let missile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . 7 7 . . . . . . . . . . . . .
+        2 5 1 1 1 1 1 1 1 3 . . . . . .
+        . 7 7 . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `, spacePlane, 200, 0)
+})
 game.onUpdateInterval(500, function on_a_update() {
     let bogy = sprites.create(assets.image`bogy`, SpriteKind.Enemy)
     bogy.setVelocity(-100, randint(-30, 30))
